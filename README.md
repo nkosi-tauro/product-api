@@ -1,73 +1,108 @@
+
+<h1 align="center">Product Api</h1>
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/nkosi-tauro/product-api?color=56BEB8">
+
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/nkosi-tauro/product-api?color=56BEB8">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/nkosi-tauro/product-api?color=56BEB8">
+
+  <img alt="License" src="https://img.shields.io/github/license/nkosi-tauro/product-api?color=56BEB8">
+
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/nkosi-tauro/product-api?color=56BEB8" /> -->
+
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/nkosi-tauro/product-api?color=56BEB8" /> -->
+
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/nkosi-tauro/product-api?color=56BEB8" /> -->
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<!-- Status -->
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<!-- <h4 align="center"> 
+	🚧  Product Api 🚀 Under construction...  🚧
+</h4> 
 
-## Description
+<hr> -->
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<br>
 
-## Installation
+## :dart: About ##
+
+A Simple CRUD API built with NestJS
+
+## :sparkles: Features ##
+
+:heavy_check_mark: User can GET/POST/PATCH/DELETE Products
+
+## :rocket: Technologies ##
+
+The following tools were used in this project:
+
+- [Nest.js](https://nestjs.com/)
+- [Node.js](https://nodejs.org/en/)
+
+## :white_check_mark: Requirements ##
+
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+
+## :checkered_flag: Starting ##
 
 ```bash
+# Clone this project
+$ git clone https://github.com/nkosi-tauro/product-api
+
+# Access
+$ cd product-api
+
+# Install dependencies
 $ npm install
+
+# Run the project
+$ npm start
+
+# The server will initialize in the <http://localhost:3000>
 ```
 
-## Running the app
-
+## :checkered_flag: Usage ##
+**Using Postman** or a service of your choice
 ```bash
-# development
-$ npm run start
+# POST new Product
+$ http://localhost:3000/products
+-> Body -> JSON
+{
+    "title": "New Title",
+    "description": "New Description",
+    "price": 13000
+}
 
-# watch mode
-$ npm run start:dev
+# GET All Products
+$ http://localhost:3000/products
 
-# production mode
-$ npm run start:prod
+# GET Single Product
+http://localhost:3000/products/:id
+
+# PATCH  Product
+$ http://localhost:3000/products/:id
+-> Body -> JSON
+{
+    "title": "New Udpated Title",
+    "description": "New Udpated  Description",
+    "price": 13000
+}
+
+# Delete Single Product
+http://localhost:3000/products/:id
+
 ```
 
-## Test
+## :memo: License ##
 
-```bash
-# unit tests
-$ npm run test
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
-# e2e tests
-$ npm run test:e2e
 
-# test coverage
-$ npm run test:cov
-```
+Made with :heart: by <a href="https://github.com/nkosi-tauro" target="_blank">Nkosilathi Tauro</a>
 
-## Support
+&#xa0;
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+<a href="#top">Back to top</a>
