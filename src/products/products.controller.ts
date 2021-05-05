@@ -1,10 +1,18 @@
-import { Controller, Post} from "@nestjs/common";
+import { Controller, Post, Body} from "@nestjs/common";
+import { completion } from "yargs";
+
+import {ProductsService} from './products.service'
 
 // /products
 @Controller('products')
 export class ProductsController {
+    constructor(private readonly productsService : ProductsService){}
+    
     @Post()
-    addProducts(): any {
-        
+    addProducts(
+        @Body('title') prodTitle: string, 
+        @Body('description') prodDesc: string, 
+        @Body('price') prodPrice: number): any {
+        this.productsService.insertProduct(prodTitle, prodDesc,prodPrice);
     }
 }
