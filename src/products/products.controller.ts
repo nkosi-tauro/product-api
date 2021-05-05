@@ -1,4 +1,4 @@
-import { Controller, Post, Body} from "@nestjs/common";
+import { Controller, Post, Body, Get} from "@nestjs/common";
 import { completion } from "yargs";
 
 import {ProductsService} from './products.service'
@@ -15,5 +15,10 @@ export class ProductsController {
         @Body('price') prodPrice: number): any {
         const generatedId = this.productsService.insertProduct(prodTitle, prodDesc,prodPrice);
         return {id: generatedId}
+    }
+
+    @Get()
+    getAllProducts(){
+        return this.productsService.getProducts();
     }
 }
