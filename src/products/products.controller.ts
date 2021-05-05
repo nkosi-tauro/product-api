@@ -13,6 +13,7 @@ export class ProductsController {
         @Body('title') prodTitle: string, 
         @Body('description') prodDesc: string, 
         @Body('price') prodPrice: number): any {
-        this.productsService.insertProduct(prodTitle, prodDesc,prodPrice);
+        const generatedId = this.productsService.insertProduct(prodTitle, prodDesc,prodPrice);
+        return {id: generatedId}
     }
 }
