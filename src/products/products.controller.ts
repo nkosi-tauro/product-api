@@ -30,15 +30,15 @@ export class ProductsController {
         return products
     }
 
-    // @Patch(':id')
-    // updateProduct(
-    //     @Param('id') prodId: string,
-    //     @Body('title') prodTitle: string, 
-    //     @Body('description') prodDesc: string, 
-    //     @Body('price') prodPrice: number):any{
-    //     this.productsService.updateProduct(prodId, prodTitle,prodDesc, prodPrice)
-    //     return null;
-    // }
+    @Patch(':id')
+    async updateProduct(
+        @Param('id') prodId: string,
+        @Body('title') prodTitle: string, 
+        @Body('description') prodDesc: string, 
+        @Body('price') prodPrice: number){
+        await this.productsService.updateProduct(prodId, prodTitle,prodDesc, prodPrice)
+        return null;
+    }
 
     // @Delete(':id')
     // removeProduct(@Param('id') prodId: string){

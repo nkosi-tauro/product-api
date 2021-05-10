@@ -38,21 +38,20 @@ export class ProductsService {
         return product
     }
 
-    // updateProduct(productId:string, title:string, description:string, price:number){
-    //     const [product, index] = this.findProduct(productId)
-    //     const updatedProduct = {...product}
-    //     // check if new values have been passed to prevent overwrite
-    //     if(title){
-    //         updatedProduct.title = title;
-    //     }
-    //     if(description){
-    //         updatedProduct.description = description;
-    //     }
-    //     if(price){
-    //         updatedProduct.price = price;
-    //     }
-    //     // this.products[index] = updatedProduct
-    // }
+    async updateProduct(productId:string, title:string, description:string, price:number){
+        const updatedProduct = await this.findProduct(productId)
+        // check if new values have been passed to prevent overwrite
+        if(title){
+            updatedProduct.title = title;
+        }
+        if(description){
+            updatedProduct.description = description;
+        }
+        if(price){
+            updatedProduct.price = price;
+        }
+        updatedProduct.save()
+    }
 
     // deleteProduct(productId:string){
     //     const [_, index] = this.findProduct(productId)
