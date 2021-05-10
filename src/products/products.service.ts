@@ -18,7 +18,7 @@ export class ProductsService {
         })
         const res = await newProduct.save();
         console.log(res)
-        return "Success"
+        return res.id as string
         
     }
 

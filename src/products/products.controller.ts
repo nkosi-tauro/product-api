@@ -9,11 +9,11 @@ export class ProductsController {
     constructor(private readonly productsService : ProductsService){}
     
     @Post()
-    addProducts(
+    async addProducts(
         @Body('title') prodTitle: string, 
         @Body('description') prodDesc: string, 
-        @Body('price') prodPrice: number): any {
-        const generatedId = this.productsService.insertProduct(prodTitle, prodDesc,prodPrice);
+        @Body('price') prodPrice: number) {
+        const generatedId = await this.productsService.insertProduct(prodTitle, prodDesc,prodPrice);
         return {id: generatedId}
     }
 
