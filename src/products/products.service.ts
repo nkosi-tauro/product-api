@@ -6,7 +6,6 @@ import {Model} from 'mongoose'
 
 @Injectable()
 export class ProductsService {
-    private products: Product[] = [];
     
     constructor(@InjectModel('Product') private readonly productModel: Model<Product>,) {}
 
@@ -53,10 +52,12 @@ export class ProductsService {
         updatedProduct.save()
     }
 
-    // deleteProduct(productId:string){
-    //     const [_, index] = this.findProduct(productId)
-    //     this.products.splice(index,1)
-    // }
+    async deleteProduct(productId:string){
+        const result =  await this.productModel.deleteOne({_id: productId}).exec()
+        if (result.n === 0) {
+            throw new NotFoundException("Could not find Product");
+        }
+    }
 
     
     private async findProduct(id:string): Promise<Product>{

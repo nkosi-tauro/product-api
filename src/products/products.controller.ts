@@ -40,9 +40,9 @@ export class ProductsController {
         return null;
     }
 
-    // @Delete(':id')
-    // removeProduct(@Param('id') prodId: string){
-    //     this.productsService.deleteProduct(prodId)
-    //     return "Success"
-    // }
+    @Delete(':id')
+    async removeProduct(@Param('id') prodId: string){
+        await this.productsService.deleteProduct(prodId)
+        return "Success"
+    }
 }
