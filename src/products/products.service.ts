@@ -33,40 +33,39 @@ export class ProductsService {
         }))
     }
 
-    getSingleProduct(productId:string){
-        const product = this.findProduct(productId)[0]
-        return {...product}
+    async getSingleProduct(productId:string){
+        const product =  await this.findProduct(productId)
+        return product
     }
 
-    updateProduct(productId:string, title:string, description:string, price:number){
-        const [product, index] = this.findProduct(productId)
-        const updatedProduct = {...product}
-        // check if new values have been passed to prevent overwrite
-        if(title){
-            updatedProduct.title = title;
-        }
-        if(description){
-            updatedProduct.description = description;
-        }
-        if(price){
-            updatedProduct.price = price;
-        }
-        // this.products[index] = updatedProduct
-    }
+    // updateProduct(productId:string, title:string, description:string, price:number){
+    //     const [product, index] = this.findProduct(productId)
+    //     const updatedProduct = {...product}
+    //     // check if new values have been passed to prevent overwrite
+    //     if(title){
+    //         updatedProduct.title = title;
+    //     }
+    //     if(description){
+    //         updatedProduct.description = description;
+    //     }
+    //     if(price){
+    //         updatedProduct.price = price;
+    //     }
+    //     // this.products[index] = updatedProduct
+    // }
 
-    deleteProduct(productId:string){
-        const [_, index] = this.findProduct(productId)
-        this.products.splice(index,1)
-    }
+    // deleteProduct(productId:string){
+    //     const [_, index] = this.findProduct(productId)
+    //     this.products.splice(index,1)
+    // }
 
     
-    private findProduct(id:string): [Product, number]{
-        const productIndex = this.products.findIndex((prod)=> prod.id === id);
-        const product = this.products[productIndex]
+    private async findProduct(id:string): Promise<Product>{
+        const product = await this.productModel.findById(id);
         if (!product){
             throw new NotFoundException("Could not find Product");
         }
-        return [product, productIndex]
+        return product
     }
 
     
