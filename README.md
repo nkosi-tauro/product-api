@@ -41,6 +41,7 @@ The following tools were used in this project:
 
 - [Nest.js](https://nestjs.com/)
 - [Node.js](https://nodejs.org/en/)
+- [MongoDB](https://cloud.mongodb.com/)
 
 ## :white_check_mark: Requirements ##
 
@@ -54,6 +55,9 @@ $ git clone https://github.com/nkosi-tauro/product-api
 
 # Access
 $ cd product-api
+
+#MongoDB
+$ update connection string to your DB
 
 # Install dependencies
 $ npm install
