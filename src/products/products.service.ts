@@ -22,9 +22,10 @@ export class ProductsService {
         
     }
 
-    getProducts(){
+    async getProducts(){
         // return a copy of products array
-        return [...this.products]
+        const products = await this.productModel.find().exec();
+        return products as Product[]
     }
 
     getSingleProduct(productId:string){
